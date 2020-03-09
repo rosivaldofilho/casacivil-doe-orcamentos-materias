@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Counter</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.15/dist/summernote.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.15/dist/summernote.min.js"></script>
+
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col"></div>
+            <div class="col" style="margin-top: 20px;">
+                <center>
+                    <div class="image">
+                        <img src="resources/images/governo_do_estado_do_tocantins.jpg" alt="">
+                    </div>
+                </center>
+            </div>
+            <div class="col"></div>
+        </div>
+        <div class="row">
+            <div class="col"></div>
+            <div class="jumbotron">
+                <span style="font-size:20px; font-weight: bold;">Orçamento de Publicação de Matéria</span>
+            </div>
+            <div class="col"></div>
+        </div>
+        <div class="row">
+            <div class="col"></div>
+            <div class="col-8">
+                <div id="app">
+                    <form action="#" method="post">
+                        <textarea id="summernote"></textarea>
+                        <span id="btn-calcular" class="btn btn-primary" v-on:click="contarCaracteres"> Calcular</span>
+                    </form>
+
+                    <div class="col" style="margin-top: 20px;">
+                        <table class="table table-bordered table-striped table-hover">
+                            <tbody>
+                                <tr>
+                                    <td><span>Quantidade de caracteres sem espaços</span></td>
+                                    <td style="width: 30%;"><span id="quantidadeSemEspaco"></span></td>
+                                </tr>
+                                <tr>
+                                    <td><span>Preço por quantidade de caracteres</span></td>
+                                    <td style="width: 30%;"><span class="text-primary" style="font-size: 20px;">
+                                        <strong>R$<span id="precoTotalChar"></span> </strong></span>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <div class="col"></div>
+        </div>
+    </div>
+    <script src="app.js"></script>
+</body>
+
+</html>
