@@ -1,41 +1,52 @@
-
-let quantidade = 0;
-let quantidadeHtml = 0;
-let quantidadeCelulas = 0;
-let quantidadeSemEspaco = 0;
-let precoTotalChar = 0.0;
-let precoTotalCell = 0.0;
+/**
+ * @author Rosivaldo Souza <rosivaldo@casacivil.to.gov.br>
+ * Casa Civil DOE - Sistema de Orcamento de Matérias
+ * Sistema para orçamento de publicação de materias do Diário Oficial do Estado do Tocantins
+ * BASEADO EM CONTAGEM DE CARACTERES
+ */
+var quantidade = 0;
+var quantidadeSemEspaco = 0;
+var precoTotalChar = 0.0;
+var ufir = 3.5550;
+var caracterePorUfir = 0.05;
 
 contarCaracteres = function () {
   var strHtml = $('#summernote').summernote('code');
+  //Correção summernote vazio
+  if (!strHtml) {strHtml = "<p><br></p>"; $('.note-editable').html(strHtml);}
   var texto = jQuery(strHtml).text();
-  //console.log(texto);
-  //console.log(strHtml);
-  quantidadeHtml = strHtml.length;
-  quantidade = texto.length;
-  //CÉLULAS
-  quantidadeCelulas = (strHtml.match(/\<td/g) || []).length;
   //CARACTERES
-  quantidadeSemEspaco = texto.length - (texto.match(/\s/g) || []).length; // remove espaços, tabulação e quebras de linha
-  quantidadeSemEspaco = quantidadeSemEspaco - (texto.match(/\.|\,/g) || []).length;// remove pontos e virgulas da contagem
+  quantidade = texto.length;
+  // remove espaços, tabulação e quebras de linha
+  quantidadeSemEspaco = texto.length - (texto.match(/\s/g) || []).length;
+  // remove pontos e virgulas da contagem
+  quantidadeSemEspaco = quantidadeSemEspaco - (texto.match(/\.|\,/g) || []).length;
   calculaPrecos();
 }
 
 calculaPrecos = function () {
-  precoTotalChar = quantidadeSemEspaco * 0.05;
-  precoTotalChar = precoTotalChar.toLocaleString('pt-BR');
-  precoTotalCell = quantidadeCelulas * 1.14
-  precoTotalCell = precoTotalCell.toLocaleString('pt-BR');
-  console.log("PREÇO: " + precoTotalChar);
-  console.log("CARACTERES SEM ESPAÇOS: " + quantidadeSemEspaco);
+  precoTotalChar = ajuste(quantidadeSemEspaco * caracterePorUfir * ufir, 2);
+  precoTotalChar = formatarMoeda(precoTotalChar);
 }
 
-atualizarFront = function(){
+//arredonda para baixo
+function ajuste(nr, casas) {
+  const og = Math.pow(10, casas)
+  return Math.floor(nr * og) / og;
+}
+
+function formatarMoeda(valor) {
+  return valor.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
+}
+
+atualizarFront = function () {
   $('#quantidadeSemEspaco').html(quantidadeSemEspaco);
-  $('#precoTotalChar').html(precoTotalChar);
+  $('#precoTotalChar').html(formatarMoeda(precoTotalChar));
+  $('#ufir').html(ufir.toString().replace(".", ","));
 }
 
 $(document).ready(function () {
+  atualizarFront();
 
   $.extend($.summernote.lang, {
     'pt-BR': {
@@ -48,8 +59,7 @@ $(document).ready(function () {
         delRow: 'Deletar linha',
         delCol: 'Deletar coluna',
         delTable: 'Deletar Tabela'
-      },
-      options: { fullscreen: 'Tela cheia' }
+      }
     }
   });
 
@@ -58,8 +68,7 @@ $(document).ready(function () {
     lang: 'pt-BR',
     placeholder: 'Digite ou cole a materia aqui...',
     toolbar: [
-      ['table', ['table']],
-      ['fullscreen', ['fullscreen']]
+      ['table', ['table']]
     ]
   });
 

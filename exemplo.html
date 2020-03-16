@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Publicação de Matérias - Diário Oficial do Estado</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="./exemplo_arquivos/bootstrap.min.css">
+    <link rel="stylesheet" href="./exemplo_arquivos/blueimp-gallery.min.css">
+    <link rel="stylesheet" href="./exemplo_arquivos/jquery-ui.min.css">
+    <link href="./exemplo_arquivos/styles.css" rel="stylesheet" media="screen">
+
+    <style type="text/css">
+        .resize-observer[data-v-b329ee4c] {
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: -1;
+            width: 100%;
+            height: 100%;
+            border: none;
+            background-color: transparent;
+            pointer-events: none;
+            display: block;
+            overflow: hidden;
+            opacity: 0
+        }
+
+        .resize-observer[data-v-b329ee4c] object {
+            display: block;
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 100%;
+            overflow: hidden;
+            pointer-events: none;
+            z-index: -1
+        }
+    </style>
+</head>
+
+<body class="pagina vsc-initialized">
+    <iframe id="barra-topo" src="./exemplo_arquivos/topo.html" frameborder="no"
+        scrolling="no" width="100%" height="150px"></iframe>
+    <div class="container margin-top">
+        <div class="col-sm-3">
+            <div>
+                <a id="ultimo" href="https://doe.to.gov.br/diario/4069/download">
+                    <p>Última Edição</p>
+                    <p>09/03/2020</p>
+                    <img src="./exemplo_arquivos/imagem" width="116"
+                        height="155">
+                    <p>77 pág</p>
+                    <p>nº 5559</p>
+                    <p>1.50 MB</p>
+                    <p>3472 downloads</p>
+                </a>
+            </div>
+            <div id="anteriores">
+                <h3 class="area-title">Edições Anteriores</h3>
+                <div>
+                    <a href="https://doe.to.gov.br/diario/4068/download">
+                        <p>06/03/2020</p>
+                        <p>nº 5558</p>
+                        <div>
+                            <p><span>61</span> pág</p>
+                            <p><span>1.10 MB</span></p>
+                            <p><span>6119</span> downloads</p>
+                        </div>
+                    </a>
+                    <a href="https://doe.to.gov.br/diario/4067/download">
+                        <p>05/03/2020</p>
+                        <p>nº 5557</p>
+                        <div>
+                            <p><span>69</span> pág</p>
+                            <p><span>1.33 MB</span></p>
+                            <p><span>4750</span> downloads</p>
+                        </div>
+                    </a>
+                    <a href="https://doe.to.gov.br/diario/4066/download">
+                        <p>04/03/2020</p>
+                        <p>nº 5556</p>
+                        <div>
+                            <p><span>60</span> pág</p>
+                            <p><span>1.14 MB</span></p>
+                            <p><span>4411</span> downloads</p>
+                        </div>
+                    </a>
+                    <a href="https://doe.to.gov.br/diario/4065/download">
+                        <p>03/03/2020</p>
+                        <p>nº 5555</p>
+                        <div>
+                            <p><span>47</span> pág</p>
+                            <p><span>824.34 KB</span></p>
+                            <p><span>4903</span> downloads</p>
+                        </div>
+                    </a>
+                    <a href="https://doe.to.gov.br/diario/4064/download">
+                        <p>02/03/2020</p>
+                        <p>nº 5554</p>
+                        <div>
+                            <p><span>46</span> pág</p>
+                            <p><span>798.04 KB</span></p>
+                            <p><span>5255</span> downloads</p>
+                        </div>
+                    </a>
+                    <a href="https://doe.to.gov.br/diario/4063/download">
+                        <p>28/02/2020</p>
+                        <p>nº 5553</p>
+                        <div>
+                            <p><span>41</span> pág</p>
+                            <p><span>896.21 KB</span></p>
+                            <p><span>6610</span> downloads</p>
+                        </div>
+                    </a>
+                    <a href="https://doe.to.gov.br/diario/4062/download">
+                        <p>27/02/2020</p>
+                        <p>nº 5552</p>
+                        <div>
+                            <p><span>35</span> pág</p>
+                            <p><span>749.31 KB</span></p>
+                            <p><span>5194</span> downloads</p>
+                        </div>
+                    </a>
+                    <a href="https://doe.to.gov.br/diario/4061/download">
+                        <p>26/02/2020</p>
+                        <p>nº 5551</p>
+                        <div>
+                            <p><span>61</span> pág</p>
+                            <p><span>948.08 KB</span></p>
+                            <p><span>5263</span> downloads</p>
+                        </div>
+                    </a>
+                    <a href="https://doe.to.gov.br/diario/4060/download">
+                        <p>21/02/2020</p>
+                        <p>nº 5550</p>
+                        <div>
+                            <p><span>45</span> pág</p>
+                            <p><span>1.09 MB</span></p>
+                            <p><span>4742</span> downloads</p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div id="conteudo" class="row col-sm-9 pagina">
+            <nav class="nav">
+                <a href="#">Inicio</a>
+                <a href="#">Ajuda</a>
+                <a href="#">Contato</a>
+                <a href="#" class="active">Publicação de Matérias</a>
+                <a href="#">Busca Avançada</a>
+            </nav>
+            <div>
+
+                <article class="col-sm-12">
+
+                    <h1 class="margin-top-0">Publicação de Matérias</h1>
+
+
+                    <div>
+                        <p>MODELO DE FORMULÁRIO PARA CREDENCIAMENTO DE E-MAIL INSTITUCIONAL</p>
+
+                        <p>1 - Modelo de formulário para cadastramento de servidores e e-mails institucionais
+                            autorizados a enviar e publicar matérias no Diário Oficial; o formulário deverá ser
+                            preenchido no computador, impresso e protocolado no balcão do DOE; download no link abaixo:
+                        </p>
+
+                        <p><br>
+                            Publicação de matérias</p>
+
+                        <p>A portaria CCI nº 170, publicada na edição nº3.060,&nbsp;normatiza as regras de elaboração e
+                            envio de documentos para publicação no D.O.E..<br>
+                            <br>
+                            O e-mail para publicações é&nbsp;doe@casacivil.to.gov.br</p>
+
+                    </div>
+
+
+                    <h4>Arquivo(s)</h4>
+
+                    <ul id="arquivos">
+                        <li><a href="https://central3.to.gov.br/arquivo/212926/">Formulário DOE</a></li>
+                    </ul>
+
+                    <!-- ADICIONAR -->
+                    <h1 class="margin-top-0">Orçamento</h1>
+                    <iframe src="counter.html" width="100%" height="800" frameborder="0" style="border:0;"></iframe>
+                    <!-- FIM ADICIONAR -->
+                </article>
+
+            </div>
+        </div>
+
+    </div>
+    <iframe id="barra-base" src="./exemplo_arquivos/base.html" frameborder="no"
+        scrolling="no" width="100%" height="760px"></iframe>
+
+    <!--[if lt IE 9]><script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.2/html5shiv.min.js"></script><![endif]-->
+    <script src="./exemplo_arquivos/jquery.min.js.download"
+        type="text/javascript"></script>
+    <script src="./exemplo_arquivos/jquery-ui.min.js.download"
+        type="text/javascript"></script>
+    <script src="./exemplo_arquivos/jquery.scroll4ever.min.js.download"></script>
+    <script src="./exemplo_arquivos/bootstrap.min.js.download"></script>
+    <script
+        src="./exemplo_arquivos/jquery.blueimp-gallery.min.js.download"></script>
+    <script src="./exemplo_arquivos/scripts.js.download"
+        type="text/javascript"></script>
+
+
+    <div class="ap-ext ap-ext-aliprice">
+        <div class="ap-basis ap-basis--ltr ap-theme--dark">
+            <!---->
+            <!---->
+        </div>
+    </div>
+</body>
+
+</html>
